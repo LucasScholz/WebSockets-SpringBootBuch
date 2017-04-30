@@ -16,7 +16,9 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
  */
 @Configuration
 @EnableWebSocket
-public class WebSocketConfig implements WebSocketConfigurer {
+public class WebSocketConfig 
+	implements WebSocketConfigurer {
+	
 	@Override
 	public void registerWebSocketHandlers(
 		WebSocketHandlerRegistry registry)
@@ -25,7 +27,8 @@ public class WebSocketConfig implements WebSocketConfigurer {
 			new TextWebSocketHandler() {
 			@Override
 			protected void handleTextMessage(
-				WebSocketSession session, TextMessage message
+				WebSocketSession session, 
+				TextMessage message
 			) throws Exception {
 				session.sendMessage(
 					new TextMessage(
